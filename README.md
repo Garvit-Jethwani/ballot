@@ -45,3 +45,4 @@ In event of building ballot image or restart of the ballot app, service test sui
 check
 patch
 request
+3 type tests check
