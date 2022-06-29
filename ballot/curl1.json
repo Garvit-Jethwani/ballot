@@ -5,7 +5,7 @@
      "-X",
      "POST",
      "-H",
-     "Content-Type:application/json",
+     "Content-Type: application/json",
      "-d",
      "{\"success\":\"false\"}"
     ],
