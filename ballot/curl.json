@@ -3,7 +3,7 @@
       "curl",
       "https://reqbin.com/echo/get/json",
       "-X",
-      "get",
+      "GET",
       "-H",
       "Accept: application/json"
     ],
