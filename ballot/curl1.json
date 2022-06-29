@@ -1,0 +1,13 @@
+{
+    "command": [
+     "curl",
+     "https://reqbin.com/sample/post/json",
+     "-X",
+     "POST",
+     "-H",
+     "Content-Type:application/json",
+     "-d",
+     "{\"success\":\"false\"}"
+    ],
+    "expected_status": "200"
+  }
