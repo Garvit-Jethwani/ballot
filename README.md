@@ -45,3 +45,5 @@ In event of building ballot image or restart of the ballot app, service test sui
 
 check
 
+.
+
