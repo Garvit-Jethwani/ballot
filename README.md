@@ -34,6 +34,7 @@ Pattern: http://$namespace.$serviceName.$clusterPublicIP.nip.io
 
 Voter: [default.voter.10.10.0.10.nip.io](http://default.voter.10.10.0.10.nip.io)
 
+
 ElectionCommission: [default.ec.10.10.0.10.nip.io](default.ec.10.10.0.10.nip.io)
 
 ## How to test deployed app
@@ -42,6 +43,7 @@ Build and deploy service-test-suite in roost cluster.
 Roost intelligently identifies service dependencies. So whenever dependent service is modified, specified test suite is triggered.
 In event of building ballot image or restart of the ballot app, service test suite would be triggered and fitness events can be seen from event viewer ( Observability -> Service Fitness -> Fitness Event).
 
+
 check
 patch
-request...
+
