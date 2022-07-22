@@ -1,12 +1,11 @@
 {
     "command": [
       "curl",
-      "https://reqbin.com/echo/get/json",
+      "",
       "-X",
       "GET",
       "-H",
       "Accept: application/json"
     ],
-    "expected_status": "200",
-    "expected_body": "{\"success\":\"true\"}"
+    "expected_status": "200"
   }
