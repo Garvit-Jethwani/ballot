@@ -1,7 +1,7 @@
 {
     "command": [
       "curl",
-      "http://ballot-pr-open-115.ballot.3.109.157.1.nip.io/",
+      "{{.url}}/tests/run",
       "-X",
       "GET",
       "-H",
