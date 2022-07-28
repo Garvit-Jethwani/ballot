@@ -1,7 +1,7 @@
 {
     "command": [
       "curl",
-      "{{.url}}/tests/run",
+      "{{.ROOST_SVC_URL}}/tests/run",
       "-X",
       "GET",
       "-H",
