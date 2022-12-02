@@ -25,6 +25,6 @@ jobs:
                   "workflow_run_id": "${{ github.run_id }}"
                   "user_name": "${{ github.actor }}"
                   "title": "${{ github.workflow }}"
-                  "application_name": "descope"
+                  "application_name": "GarvitPulumi"
             - run: 
                 echo ${{ steps.roost.outputs.response }}
