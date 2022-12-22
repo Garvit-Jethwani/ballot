@@ -25,7 +25,7 @@ Depends on: ecserver
 An backend app written in Golang for election-commission to store list of candidates.
 
 ## How to deploy
-
+..
 Right-click on [Makefile](./Makefile) and choose Run
 '
 ## How to access application
