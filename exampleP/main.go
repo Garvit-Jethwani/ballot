@@ -76,7 +76,7 @@ func main() {
 	}
 	// Container list
 	var latestContainers = 1
-	var containerLatestList ListContainer
+	var containerLatestList []ListContainer
 	containerLatestList, err = containers.List(connText, nil, nil, &latestContainers, nil, nil, nil)
 	if err != nil {
 		fmt.Println(err)
