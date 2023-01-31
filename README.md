@@ -1,5 +1,5 @@
-# Voting app
-
+# Ballot app
+This is ballot micro-service
 ## About project
 
 Voting application contains various frontend and backend microservices. These microservices are deployed and are available over ingress in Roost Cluster.
@@ -26,12 +26,12 @@ An backend app written in Golang for election-commission to store list of candid
 
 ## How to deploy
 
-Right-click on [Makefile](./Makefile) and choose Run.
-
+Right-click on [Makefile](./Makefile) and choose Run
+'
 ## How to access application
 
 Pattern: http://$namespace.$serviceName.$clusterPublicIP.nip.io
-
+.
 Voter: [default.voter.10.10.0.10.nip.io](http://default.voter.10.10.0.10.nip.io)
 
 

@@ -1,0 +1,30 @@
+name: Roost workflow template
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    
+jobs:
+    Initiate-Roost-Workflow:
+        name: 'Initiate Roost Workflow'
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Call Roost WebHook'
+              uses: indiesdev/curl@v1.1
+              id: roost
+              with:
+                url: https://zbio.roost.io/api/application/triggerEaasFromGhActions
+                method: 'POST'
+                accept: 200,201,204
+                headers: '{ "Content-Type": "application/json" }'
+                body: |
+                  "repo_id": "${{ github.event.repository.id }}"
+                  "app_user_id": "${{ secrets.ROOST_SECRET }}"
+                  "full_repo_name": "${{ github.repository }}"
+                  "branch": "${{ github.base_ref }}"
+                  "workflow_run_id": "${{ github.run_id }}"
+                  "user_name": "${{ github.actor }}"
+                  "title": "${{ github.workflow }}"
+                  "application_name": "GarvitPulumi"
+            - run: 
+                echo ${{ steps.roost.outputs.response }}
