@@ -7,8 +7,6 @@ import (
 
 	"github.com/containers/libpod/v2/pkg/bindings"
 	"github.com/containers/libpod/v2/pkg/bindings/containers"
-	"github.com/containers/libpod/v2/pkg/bindings/images"
-	"github.com/containers/libpod/v2/pkg/domain/entities"
 )
 
 func main() {
@@ -17,12 +15,6 @@ func main() {
 	// Get Podman socket location
 	socket := "unix:///run/user/1000/podman/podman.sock"
 	connText, err := bindings.NewConnection(context.Background(), socket)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-	fmt.Println("Pulling Busybox image...")
-	_, err = images.Pull(connText, "docker.io/zbio/ballot", entities.ImagePullOptions{})
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
