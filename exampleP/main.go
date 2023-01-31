@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/pkg/bindings"
-	"github.com/containers/podman/v4/pkg/bindings/containers"
+	"github.com/containers/podman/v3/pkg/bindings"
+	"github.com/containers/podman/v3/pkg/bindings/containers"
 )
 
 func main() {
