@@ -1,7 +1,36 @@
 version: "3.9"
 services:
   ballot:
-    image: ballot:${ROOST_NAMESPACE}
     container_name: ballot
+    image: ballot:${GIT_COMMIT_ID}
     ports:
       - "30040:8080"
+  voter:
+    container_name: voter
+    image: 872232775305.dkr.ecr.ap-south-1.amazonaws.com/voter:latest
+    tty: true
+    stdin_open: true
+    ports: 
+      - "30041:80"
+    environment:
+      REACT_APP_BALLOT_ENDPOINT:  "${ROOST_CLUSTER_IP}:30040"
+      REACT_APP_EC_SERVER_ENDPOINT: "${ROOST_CLUSTER_IP}:30042"
+    links:
+      - ballot
+      - ecserver
+  ecserver:
+    container_name: ecserver
+    image: 872232775305.dkr.ecr.ap-south-1.amazonaws.com/ecserver:latest
+    ports: 
+      - "30042:8081"
+  election-commission:
+    container_name: ec
+    image: 872232775305.dkr.ecr.ap-south-1.amazonaws.com/election-commission:latest
+    tty: true
+    stdin_open: true
+    ports: 
+      - "30043:80"
+    environment:
+      REACT_APP_EC_SERVER_ENDPOINT: "${ROOST_CLUSTER_IP}:30042"
+    links:
+      - ecserver
